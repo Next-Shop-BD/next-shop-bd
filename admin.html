@@ -8,17 +8,17 @@
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Hind Siliguri', sans-serif;}
     body {background:#f5f5f5; min-height:100vh;}
-  .container {max-width:900px; margin:0 auto; padding:20px;}
-  .admin-box {background:white; padding:25px; border-radius:15px; margin-bottom:20px;}
-  .admin-box h2 {color:#D4AF37; margin-bottom:15px;}
-  .admin-grid {display:grid; grid-template-columns:1fr 1fr; gap:15px;}
-   input {width:100%; padding:15px; border:2px solid #ccc; border-radius:8px; font-size:16px;}
-  .admin-btn {background:#16a34a; color:white; padding:12px; border:none; border-radius:8px; font-weight:700; cursor:pointer; grid-column:span 2; font-size:16px;}
-  .order-card {border:2px solid #D4AF37; padding:15px; border-radius:10px; margin-bottom:15px;}
-  .del-btn {background:#ef4444; color:white; padding:5px 15px; border:none; border-radius:5px; cursor:pointer; float:right;}
+   .container {max-width:900px; margin:0 auto; padding:20px;}
+   .admin-box {background:white; padding:25px; border-radius:15px; margin-bottom:20px;}
+   .admin-box h2 {color:#D4AF37; margin-bottom:15px;}
+   .admin-grid {display:grid; grid-template-columns:1fr 1fr; gap:15px;}
+    input {width:100%; padding:15px; border:2px solid #ccc; border-radius:8px; font-size:16px;}
+   .admin-btn {background:#16a34a; color:white; padding:12px; border:none; border-radius:8px; font-weight:700; cursor:pointer; grid-column:span 2; font-size:16px;}
+   .order-card {border:2px solid #D4AF37; padding:15px; border-radius:10px; margin-bottom:15px;}
+   .del-btn {background:#ef4444; color:white; padding:5px 15px; border:none; border-radius:5px; cursor:pointer; float:right;}
     #loginBox {max-width:400px; margin:100px auto; background:white; padding:40px; border-radius:20px; text-align:center;}
-  .header {display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;}
-  .back-btn {background:#2563eb; color:white; padding:10px 20px; border:none; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-block;}
+   .header {display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;}
+   .back-btn {background:#2563eb; color:white; padding:10px 20px; border:none; border-radius:10px; cursor:pointer; text-decoration:none; display:inline-block;}
   </style>
 </head>
 <body>
@@ -44,7 +44,7 @@
         <input required type="number" placeholder="Old Price" id="formOldPrice">
         <input required type="number" placeholder="Stock" id="formStock">
         <input required placeholder="Image URLs (কমা দিয়ে আলাদা কর)" id="formImgs" style="grid-column:span 2;">
-        <button class="admin-btn">Update Product</button>
+        <button class="admin-btn">Update Product & Go to Site</button>
       </form>
     </div>
 
@@ -67,7 +67,7 @@ document.getElementById('loginBtn').onclick = function() {
 };
 
 function loadAdminData() {
-  const product = JSON.parse(localStorage.getItem('product')) || {};
+  const product = JSON.parse(localStorage.getItem('nextshop_product')) || {};
   document.getElementById('formName').value = product.name || '';
   document.getElementById('formPrice').value = product.price || '';
   document.getElementById('formOldPrice').value = product.oldPrice || '';
@@ -77,7 +77,7 @@ function loadAdminData() {
 }
 
 function loadOrders() {
-  const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+  const orders = JSON.parse(localStorage.getItem('nextshop_orders') || '[]');
   document.getElementById('orderCount').innerText = orders.length;
   const ordersList = document.getElementById('ordersList');
   ordersList.innerHTML = orders.length === 0? '<p style="color:#666;">No orders yet</p>' : '';
@@ -100,9 +100,9 @@ function loadOrders() {
 }
 
 function deleteOrder(id) {
-  let orders = JSON.parse(localStorage.getItem('orders') || '[]');
+  let orders = JSON.parse(localStorage.getItem('nextshop_orders') || '[]');
   orders = orders.filter(o => o.id!== id);
-  localStorage.setItem('orders', JSON.stringify(orders));
+  localStorage.setItem('nextshop_orders', JSON.stringify(orders));
   loadOrders();
 }
 
@@ -116,8 +116,9 @@ document.getElementById('productForm').addEventListener('submit', function(e) {
     stock: Number(document.getElementById('formStock').value),
     imgs: document.getElementById('formImgs').value.split(',').map(i => i.trim())
   };
-  localStorage.setItem('product', JSON.stringify(newProduct));
-  alert('Product Updated! এখন index.html এ গিয়ে দেখো');
+  localStorage.setItem('nextshop_product', JSON.stringify(newProduct));
+  alert('Product Updated! এখন হোমপেজে দেখাবে।');
+  window.location.href = 'index.html';
 });
 </script>
 </body>
