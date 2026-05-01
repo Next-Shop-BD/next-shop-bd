@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Next Shop - প্রিমিয়াম ডায়মন্ড কাট এমারেল্ড লাক্সারি রিং 40% OFF</title>
+  <title>Next Shop - প্রিমিয়াম ডায়মন্ড কাট লাক্সারি রিং 40% OFF</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Hind Siliguri', sans-serif;}
@@ -44,13 +44,14 @@
     <div class="header">
       <div class="logo">Next Shop</div>
       <p>Premium Jewelry Collection</p>
+      <p>E-commerce Shop</p>
     </div>
     <div class="slider">
       <div class="slides">
-        <div class="slide"><img src="https://i.ibb.co.com/B2wLY8wZ/diamond-Ring-red-square-stone.png" alt="Ring 1"></div>
-        <div class="slide"><img src="https://i.ibb.co.com/8gWWMh5s/diamond-ring-1-red-square-stone.png" alt="Ring 2"></div>
-        <div class="slide"><img src="https://i.ibb.co.com/B2wLY8wZ/diamond-Ring-red-square-stone.png" alt="Ring 1"></div>
-        <div class="slide"><img src="https://i.ibb.co.com/8gWWMh5s/diamond-ring-1-red-square-stone.png" alt="Ring 2"></div>
+        <div class="slide"><img src="https://i.ibb.co.com/dwkySjJV/diamond-ring-1-white-square-stone.png"></div>
+        <div class="slide"><img src="https://i.ibb.co.com/xK8M07wk/diamond-ring-2-white-square-stone-2.png"></div>
+        <div class="slide"><img src="https://i.ibb.co.com/dwkySjJV/diamond-ring-1-white-square-stone.png"></div>
+        <div class="slide"><img src="https://i.ibb.co.com/xK8M07wk/diamond-ring-2-white-square-stone-2.png"></div>
       </div>
       <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
       <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
@@ -63,8 +64,8 @@
     </div>
     <div style="text-align:center;">
       <span class="badge">স্পেশাল 40% OFF</span>
-      <h1>প্রিমিয়াম ডায়মন্ড কাট এমারেল্ড লাক্সারি রিং</h1>
-      <p class="price">৳1,050<span class="old-price">৳1,470</span></p>
+      <h1>প্রিমিয়াম ডায়মন্ড কাট লাক্সারি রিং</h1>
+      <p class="price">৳850<span class="old-price">৳1,070</span></p>
     </div>
     <div class="stock">⚠️ স্টকে আছে মাত্র 12 পিস</div>
     <div class="features">
@@ -102,8 +103,8 @@
       formData.append('name', document.getElementById('name').value);
       formData.append('phone', document.getElementById('phone').value);
       formData.append('address', document.getElementById('address').value);
-      formData.append('product', 'Emerald Diamond Ring'); // এই লাইন যোগ করছি
-      formData.append('price', '1050'); // এই লাইন যোগ করছি
+      formData.append('product', 'প্রিমিয়াম ডায়মন্ড কাট লাক্সারি রিং'); // এই লাইন যোগ করছি
+      formData.append('price', '850'); // এই লাইন যোগ করছি
       fetch(SCRIPT_URL, {
         method: 'POST',
         body: formData
