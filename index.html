@@ -12,7 +12,7 @@
 
   <!-- Facebook Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
+ !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
     if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -29,42 +29,43 @@
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Hind Siliguri', sans-serif;}
     body {background:#FFF8F0; color:#333;}
-  .container {max-width:500px; margin:0 auto; padding:20px;}
-  .header {text-align:center; padding:20px 0;}
-  .logo {font-size:32px; font-weight:700; color:#D4AF37;}
-  .slider {position:relative; margin:15px 0; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);}
-  .slides {display:flex; transition:transform 0.5s ease;}
-  .slide {min-width:100%; display:none;}
-  .slide.active {display:block;}
-  .slide img {width:100%; display:block;}
-  .slider-btn {position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; padding:12px; cursor:pointer; font-size:18px; z-index:10;}
-  .prev {left:10px; border-radius:0 5px 5px 0;}
-  .next {right:10px; border-radius:5px 0 0 5px;}
-  .dots {text-align:center; padding:10px 0;}
-  .dot {height:10px; width:10px; margin:0 4px; background:#bbb; border-radius:50%; display:inline-block; cursor:pointer;}
-  .dot.active {background:#D4AF37;}
-  .badge {background:#FF3B30; color:white; padding:8px 16px; border-radius:20px; display:inline-block; margin:10px 0; font-weight:600;}
-  .price {font-size:36px; font-weight:700; color:#D4AF37; margin:10px 0;}
-  .old-price {text-decoration:line-through; color:#999; font-size:20px; margin-left:10px;}
-  .stock {background:#FFF3CD; color:#856404; padding:10px; border-radius:8px; margin:15px 0; text-align:center; font-weight:600;}
-  .features {background:white; padding:20px; border-radius:12px; margin:20px 0;}
-  .features h3 {color:#D4AF37; margin-bottom:15px;}
-  .features li {margin:12px 0; list-style:none; font-size:16px;}
-  .features li:before {content:"✅ "; margin-right:8px;}
+   .container {max-width:500px; margin:0 auto; padding:20px;}
+   .header {text-align:center; padding:20px 0;}
+   .logo {font-size:32px; font-weight:700; color:#D4AF37;}
+   .slider {position:relative; margin:15px 0; border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.1);}
+   .slides {display:flex; transition:transform 0.5s ease;}
+   .slide {min-width:100%; display:none;}
+   .slide.active {display:block;}
+   .slide img {width:100%; display:block;}
+   .slider-btn {position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; padding:12px; cursor:pointer; font-size:18px; z-index:10;}
+   .prev {left:10px; border-radius:0 5px 5px 0;}
+   .next {right:10px; border-radius:5px 0 0 5px;}
+   .dots {text-align:center; padding:10px 0;}
+   .dot {height:10px; width:10px; margin:0 4px; background:#bbb; border-radius:50%; display:inline-block; cursor:pointer;}
+   .dot.active {background:#D4AF37;}
+   .badge {background:#FF3B30; color:white; padding:8px 16px; border-radius:20px; display:inline-block; margin:10px 0; font-weight:600;}
+   .price {font-size:36px; font-weight:700; color:#D4AF37; margin:10px 0;}
+   .old-price {text-decoration:line-through; color:#999; font-size:20px; margin-left:10px;}
+   .stock {background:#FFF3CD; color:#856404; padding:10px; border-radius:8px; margin:15px 0; text-align:center; font-weight:600;}
+   .features {background:white; padding:20px; border-radius:12px; margin:20px 0;}
+   .features h3 {color:#D4AF37; margin-bottom:15px;}
+   .features li {margin:12px 0; list-style:none; font-size:16px;}
+   .features li:before {content:"✅ "; margin-right:8px;}
     input, textarea {width:100%; padding:15px; margin:8px 0; border:2px solid #D4AF37; border-radius:8px; font-size:16px;}
-  .order-btn {width:100%; background:#25D366; color:white; padding:18px; border:none; border-radius:8px; font-size:20px; font-weight:700; cursor:pointer; margin-top:10px;}
-  .order-btn:disabled {background:#999;}
-  .trust {text-align:center; margin-top:25px; font-size:14px; color:#666;}
-  .countdown {background:#D4AF37; color:white; padding:10px; text-align:center; font-weight:600; position:sticky; top:0; z-index:100;}
-  .success-msg {display:none; background:#D4EDDA; color:#155724; padding:20px; border-radius:8px; text-align:center; margin-top:20px; font-weight:600; line-height:1.6;}
-  .admin-link {font-size:12px; color:#666; text-decoration:underline; cursor:pointer;}
+   .order-btn {width:100%; background:#25D366; color:white; padding:18px; border:none; border-radius:8px; font-size:20px; font-weight:700; cursor:pointer; margin-top:10px;}
+   .order-btn:disabled {background:#999;}
+   .trust {text-align:center; margin-top:25px; font-size:14px; color:#666;}
+   .countdown {background:#D4AF37; color:white; padding:10px; text-align:center; font-weight:600; position:sticky; top:0; z-index:100;}
+   .success-msg {display:none; background:#D4EDDA; color:#155724; padding:20px; border-radius:8px; text-align:center; margin-top:20px; font-weight:600; line-height:1.6;}
+   .admin-link {font-size:12px; color:#666; text-decoration:underline; cursor:pointer; display:inline-block; padding:5px;}
+   .admin-link:hover {color:#D4AF37;}
     #adminPanel {display:none; max-width:900px; margin:0 auto; padding:20px; background:#f5f5f5; min-height:100vh;}
-  .admin-box {background:white; padding:25px; border-radius:15px; margin-bottom:20px;}
-  .admin-box h2 {color:#D4AF37; margin-bottom:15px;}
-  .admin-grid {display:grid; grid-template-columns:1fr 1fr; gap:15px;}
-  .admin-btn {background:#16a34a; color:white; padding:12px; border:none; border-radius:8px; font-weight:700; cursor:pointer; grid-column:span 2;}
-  .order-card {border:2px solid #D4AF37; padding:15px; border-radius:10px; margin-bottom:15px;}
-  .del-btn {background:#ef4444; color:white; padding:5px 15px; border:none; border-radius:5px; cursor:pointer; float:right;}
+   .admin-box {background:white; padding:25px; border-radius:15px; margin-bottom:20px;}
+   .admin-box h2 {color:#D4AF37; margin-bottom:15px;}
+   .admin-grid {display:grid; grid-template-columns:1fr 1fr; gap:15px;}
+   .admin-btn {background:#16a34a; color:white; padding:12px; border:none; border-radius:8px; font-weight:700; cursor:pointer; grid-column:span 2;}
+   .order-card {border:2px solid #D4AF37; padding:15px; border-radius:10px; margin-bottom:15px;}
+   .del-btn {background:#ef4444; color:white; padding:5px 15px; border:none; border-radius:5px; cursor:pointer; float:right;}
     #loginBox {max-width:400px; margin:100px auto; background:white; padding:40px; border-radius:20px; text-align:center;}
   </style>
 </head>
@@ -80,12 +81,12 @@
     <div class="header">
       <div class="logo">Next Shop</div>
       <p>Premium Jewelry Collection</p>
-      <span class="admin-link" onclick="showAdmin()">Admin Panel</span>
+      <div class="admin-link" id="adminLinkBtn">Admin Panel</div>
     </div>
     <div class="slider">
       <div class="slides" id="slideContainer"></div>
-      <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
-      <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+      <button class="slider-btn prev" id="prevBtn">❮</button>
+      <button class="slider-btn next" id="nextBtn">❯</button>
     </div>
     <div class="dots" id="dotsContainer"></div>
     <div style="text-align:center;">
@@ -125,14 +126,14 @@
   <div id="loginBox">
     <h1 style="font-size:30px; margin-bottom:20px;">Admin Login</h1>
     <input type="password" id="adminPass" placeholder="Password: admin123" style="margin-bottom:15px;">
-    <button onclick="adminLogin()" style="background:#D4AF37; color:white; padding:15px; width:100%; border:none; border-radius:8px; font-size:18px; font-weight:700; cursor:pointer;">Login</button>
-    <p style="margin-top:15px; font-size:12px; color:#666; cursor:pointer;" onclick="showCustomer()">← Back to Site</p>
+    <button id="loginBtn" style="background:#D4AF37; color:white; padding:15px; width:100%; border:none; border-radius:8px; font-size:18px; font-weight:700; cursor:pointer;">Login</button>
+    <p style="margin-top:15px; font-size:12px; color:#666; cursor:pointer;" id="backToSiteBtn">← Back to Site</p>
   </div>
 
   <div id="adminDashboard" style="display:none;">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
       <h1 style="font-size:36px; font-weight:bold;">Admin Dashboard</h1>
-      <button onclick="showCustomer()" style="background:#2563eb; color:white; padding:10px 20px; border:none; border-radius:10px; cursor:pointer;">View Site</button>
+      <button id="viewSiteBtn" style="background:#2563eb; color:white; padding:10px 20px; border:none; border-radius:10px; cursor:pointer;">View Site</button>
     </div>
 
     <div class="admin-box">
@@ -185,10 +186,12 @@
 
     currentProduct.imgs.forEach((img, i) => {
       slideContainer.innerHTML += <div class="slide ${i===0?'active':''}"><img src="${img}" alt="Ring"></div>;
-      dotsContainer.innerHTML += <span class="dot ${i===0?'active':''}" onclick="currentSlide(${i})"></span>;
+      const dot = document.createElement('span');
+      dot.className = dot ${i===0?'active':''};
+      dot.onclick = () => currentSlide(i);
+      dotsContainer.appendChild(dot);
     });
 
-    // Facebook Pixel ViewContent
     if(typeof fbq!== 'undefined'){
       fbq('track', 'ViewContent', {
         content_name: currentProduct.name,
@@ -223,7 +226,6 @@
     dots[slideIndex].classList.add("active");
   }
 
-  // Order Submit + GTM + Pixel Event
   document.getElementById('orderForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const btn = document.getElementById('submitBtn');
@@ -246,7 +248,6 @@
     orders.push(newOrder);
     localStorage.setItem('orders', JSON.stringify(orders));
 
-    // GTM DataLayer Push
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       'event': 'purchase',
@@ -263,7 +264,6 @@
       }
     });
 
-    // Facebook Pixel Purchase Event
     if(typeof fbq!== 'undefined'){
       fbq('track', 'Purchase', {
         value: currentProduct.price,
@@ -282,7 +282,6 @@
     }, 500);
   });
 
-  // Admin Functions
   function showAdmin() {
     document.getElementById('customerSite').style.display = 'none';
     document.getElementById('adminPanel').style.display = 'block';
@@ -322,18 +321,23 @@
     ordersList.innerHTML = orders.length === 0? '<p style="color:#666;">No orders yet</p>' : '';
 
     orders.reverse().forEach(o => {
-      ordersList.innerHTML += `
-        <div class="order-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-            <p style="font-weight:bold; font-size:18px;">${o.product} - ৳${o.price}</p>
-            <button class="del-btn" onclick="deleteOrder(${o.id})">Complete</button>
-          </div>
-          <p><b>নাম:</b> ${o.customer.name}</p>
-          <p><b>ফোন:</b> ${o.customer.phone}</p>
-          <p><b>ঠিকানা:</b> ${o.customer.address}</p>
-          <p style="color:#666; font-size:14px; margin-top:8px;">${o.date}</p>
+      const div = document.createElement('div');
+      div.className = 'order-card';
+      div.innerHTML = `
+        <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
+          <p style="font-weight:bold; font-size:18px;">${o.product} - ৳${o.price}</p>
+          <button class="del-btn" data-id="${o.id}">Complete</button>
         </div>
+        <p><b>নাম:</b> ${o.customer.name}</p>
+        <p><b>ফোন:</b> ${o.customer.phone}</p>
+        <p><b>ঠিকানা:</b> ${o.customer.address}</p>
+        <p style="color:#666; font-size:14px; margin-top:8px;">${o.date}</p>
       `;
+      ordersList.appendChild(div);
+    });
+
+    document.querySelectorAll('.del-btn').forEach(btn => {
+      btn.onclick = () => deleteOrder(Number(btn.getAttribute('data-id')));
     });
   }
 
@@ -359,6 +363,14 @@
     loadProduct();
     alert('Product Updated! সাইটে গিয়ে দেখো');
   });
+
+  // Event Listeners - এইগুলা দিয়ে ক্লিক কাজ করবে
+  document.getElementById('adminLinkBtn').onclick = showAdmin;
+  document.getElementById('prevBtn').onclick = () => moveSlide(-1);
+  document.getElementById('nextBtn').onclick = () => moveSlide(1);
+  document.getElementById('loginBtn').onclick = adminLogin;
+  document.getElementById('backToSiteBtn').onclick = showCustomer;
+  document.getElementById('viewSiteBtn').onclick = showCustomer;
 
   // Init
   loadProduct();
