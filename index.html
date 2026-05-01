@@ -8,19 +8,10 @@
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-PNHLW3TD');</script>
-  <!-- End Google Tag Manager -->
 
-  <!-- Facebook Pixel Code -->
-  <script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '27581753588093908');
-  fbq('track', 'PageView');
-  </script>
+  <!-- Facebook Pixel -->
+  <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '27581753588093908');fbq('track', 'PageView');</script>
   <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=27581753588093908&ev=PageView&noscript=1"/></noscript>
-  <!-- End Facebook Pixel Code -->
 
   <style>
     * {margin:0; padding:0; box-sizing:border-box; font-family: 'Hind Siliguri', sans-serif;}
@@ -51,7 +42,8 @@
   .trust {text-align:center; margin-top:25px; font-size:14px; color:#666;}
   .countdown {background:#D4AF37; color:white; padding:10px; text-align:center; font-weight:600; position:sticky; top:0; z-index:100;}
   .success-msg {display:none; background:#D4EDDA; color:#155724; padding:20px; border-radius:8px; text-align:center; margin-top:20px; font-weight:600; line-height:1.6;}
-  .admin-link {display:inline-block; margin-top:10px; background:#D4AF37; color:white; padding:10px 20px; border-radius:20px; text-decoration:none; font-size:14px; font-weight:600;}
+  .footer {text-align:center; padding:30px 0 20px 0; margin-top:20px; border-top:1px solid #eee;}
+  .admin-link {color:#999; font-size:12px; text-decoration:none;}
   </style>
 </head>
 <body>
@@ -62,7 +54,6 @@
   <div class="header">
     <div class="logo">Next Shop</div>
     <p>Premium Jewelry Collection</p>
-    <a href="admin.html" class="admin-link">🔐 Admin Panel</a>
   </div>
   <div class="slider">
     <div class="slides" id="slideContainer"></div>
@@ -92,12 +83,13 @@
     <textarea id="address" placeholder="সম্পূর্ণ ঠিকানা" rows="3" required></textarea>
     <button type="submit" class="order-btn">📱 Order Now</button>
   </form>
-  <div class="success-msg" id="successMsg">
-    ✅ আপনার অর্ডারটি কনফার্ম হয়েছে!<br>আমাদের একজন প্রতিনিধি খুব অল্প সময়ের মধ্যে আপনার সাথে যোগাযোগ করবে।
-  </div>
+  <div class="success-msg" id="successMsg">✅ আপনার অর্ডারটি কনফার্ম হয়েছে!<br>আমাদের একজন প্রতিনিধি খুব অল্প সময়ের মধ্যে আপনার সাথে যোগাযোগ করবে।</div>
   <div class="trust">
     <p>🔒 100% নিরাপদ অর্ডার | 🚚 ডেলিভারি: ঢাকা ৳70, বাইরে ৳120</p>
     <p>📞 হেল্পলাইন: 01713-273277</p>
+  </div>
+  <div class="footer">
+    <a href="admin.html" class="admin-link">Admin</a>
   </div>
 </div>
 
@@ -116,7 +108,7 @@ const defaultProduct = {
   ]
 };
 
-let currentProduct = JSON.parse(localStorage.getItem('product')) || defaultProduct;
+let currentProduct = JSON.parse(localStorage.getItem('nextshop_product')) || defaultProduct;
 let slideIndex = 0;
 
 function loadProduct() {
@@ -131,7 +123,7 @@ function loadProduct() {
   dotsContainer.innerHTML = '';
 
   currentProduct.imgs.forEach((img, i) => {
-    slideContainer.innerHTML += <div class="slide ${i===0?'active':''}"><img src="${img}" alt="Ring"></div>;
+    slideContainer.innerHTML += <div class="slide ${i===0?'active':''}"><img src="${img}" alt="Product"></div>;
     const dot = document.createElement('span');
     dot.className = dot ${i===0?'active':''};
     dot.onclick = () => currentSlide(i);
@@ -150,10 +142,7 @@ function moveSlide(n) {
   updateSlide();
 }
 
-function currentSlide(n) {
-  slideIndex = n;
-  updateSlide();
-}
+function currentSlide(n) { slideIndex = n; updateSlide(); }
 
 function updateSlide() {
   const slides = document.getElementsByClassName("slide");
@@ -175,7 +164,7 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
   btn.disabled = true;
   btn.innerText = 'অর্ডার হচ্ছে...';
 
-  const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+  const orders = JSON.parse(localStorage.getItem('nextshop_orders') || '[]');
   const orderId = Date.now();
   const newOrder = {
     id: orderId,
@@ -189,7 +178,7 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
     date: new Date().toLocaleString('en-BD')
   };
   orders.push(newOrder);
-  localStorage.setItem('orders', JSON.stringify(orders));
+  localStorage.setItem('nextshop_orders', JSON.stringify(orders));
 
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({
@@ -209,8 +198,6 @@ document.getElementById('orderForm').addEventListener('submit', function(e) {
   setTimeout(() => {
     document.getElementById('orderForm').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
-    btn.disabled = false;
-    btn.innerText = '📱 Order Now';
   }, 500);
 });
 
